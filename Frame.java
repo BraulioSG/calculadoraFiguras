@@ -126,6 +126,93 @@ public class Frame extends JFrame implements ActionListener{
 	    }
 	}
 	if(e.getSource() == calcularBT){
+	    double perimetro = 0.0;
+	    double area = 0.0;
+	    double x, y;
+
+	    String seleccion = opcionesCB.getSelectedItem().toString();
+	    switch (seleccion){
+		case "Cuadrado":
+		    try{
+			x = Double.parseDouble(lado1TF.getText());
+			Cuadrado c = new Cuadrado(x);
+			area = c.calcArea();
+			perimetro = c.calcPeri();
+		    }
+		    catch(Exception ex){
+			System.out.println("error con el parser");
+			return;
+		    }
+		    break;
+		case "Rectangulo":
+		    try{
+			x = Double.parseDouble(lado1TF.getText());
+			y = Double.parseDouble(lado1TF.getText());
+			Rectangulo r = new Rectangulo(x,y);
+			area = r.calcArea();
+			perimetro = r.calcPeri();
+		    }
+		    catch(Exception ex){
+			System.out.println("error con el parser");
+			return;
+		    }
+		    break;
+		case "Triangulo":
+		    try{
+			x = Double.parseDouble(lado1TF.getText());
+			y = Double.parseDouble(lado1TF.getText());
+			Triangulo t = new Triangulo(x,y);
+			area = t.calcArea();
+			perimetro = t.calcPeri();
+		    }
+		    catch(Exception ex){
+			System.out.println("error con el parser");
+			return;
+		    }
+		    break;
+		case "Circulo":
+		    try{
+			x = Double.parseDouble(lado1TF.getText());
+			Circulo c = new Circulo(x);
+			area = c.calcArea();
+			perimetro = c.calcPeri();
+		    }
+		    catch(Exception ex){
+			System.out.println("error con el parser");
+			return;
+		    }
+		    break;
+		case "Semicirculo":
+		    try{
+			x = Double.parseDouble(lado1TF.getText());
+			SemiCirculo s = new SemiCirculo(x);
+			area = s.calcArea();
+			perimetro = s.calcPeri();
+		    }
+		    catch(Exception ex){
+			System.out.println("error con el parser");
+			return;
+		    }
+		    break;
+		case "Pentagono":
+		    try{
+			x = Double.parseDouble(lado1TF.getText());
+			y = Double.parseDouble(lado1TF.getText());
+			Pentagono p = new Pentagono(x,y);
+			area = p.calcArea();
+			perimetro = p.calcPeri();
+		    }
+		    catch(Exception ex){
+			System.out.println("error con el parser");
+			return;
+		    }
+		    break;
+		default:
+		    System.out.println("default");
+		    break;
+	    }
+	    perimetroLB.setText("perimetro: " + perimetro);
+	    areaLB.setText("area: " + area);
 	}
     }
 }
