@@ -1,6 +1,6 @@
 public class Circulo implements Figura{
     //atributos
-    protected double radio;
+    private double radio;
 
     public Circulo(double radio){
 	this.radio = radio;
